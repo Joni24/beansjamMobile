@@ -515,6 +515,7 @@ MonoBehaviour:
   - {fileID: 123469032}
   - {fileID: 1630926788}
   enemy: {fileID: 845227390}
+  startDelay: 1
   moveSpeed: 2
   rotateSpeed: 0.56
 --- !u!1 &1112908723
