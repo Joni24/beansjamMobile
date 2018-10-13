@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23169415377048986}
   - component: {fileID: 114610799827475286}
   - component: {fileID: 54028656170597522}
+  - component: {fileID: 114462820340457864}
   m_Layer: 0
   m_Name: Pantomime
   m_TagString: Untagged
@@ -53,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1575617196854782}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.01, z: -5.76}
+  m_LocalPosition: {x: 0, y: 0.64, z: -5.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4855565858006614}
@@ -130,6 +131,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114462820340457864
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1575617196854782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f98705e542c789b4a957c28379c72044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forwardSpeed: 1
+  lateralSpeed: 2
 --- !u!114 &114610799827475286
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2ecfd255a6cba429b4b18ac98a2a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: {fileID: 0}
+  radius: 1
   samples: 8
 --- !u!212 &212458643597980408
 SpriteRenderer:
