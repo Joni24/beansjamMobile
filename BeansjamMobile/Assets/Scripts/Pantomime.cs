@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Pantomime : MonoBehaviour {
-    private const float radius = 1.5f;
-
-    [SerializeField] private FollowWay movement;
+    public float radius = 1.5f;
+    
     private List<Transform> samplePoints = new List<Transform>();
     public int samples = 8;
+
+    private Vector3 startPosition;
+
+    private void Awake()
+    {
+        startPosition = transform.position;
+    }
 
     private void Start()
     {
@@ -27,8 +33,8 @@ public class Pantomime : MonoBehaviour {
 
     public void Die()
     {
-        Debug.Log("SHAME SHAME, YOU ARE NOT A PANTIMIME ANYMORE!");
-        movement.Stop();
+        //Debug.Log("SHAME SHAME, YOU ARE NOT A PANTOMIME ANYMORE!");
+        transform.position = startPosition;
     }
 
     //private void OnDrawGizmos()
@@ -55,11 +61,5 @@ public class Pantomime : MonoBehaviour {
             if (hits.Length > 0 && !insideJam)
                 Die();
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        //Debug.Log(other.name);
-        Die();
     }
 }
