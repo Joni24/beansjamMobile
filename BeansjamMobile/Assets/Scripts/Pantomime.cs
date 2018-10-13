@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Pantomime : MonoBehaviour {
+    private const float raycastDistance = 10f;
     public float radius = 1.5f;
-    
+    public bool showDebug = true;
+
     private List<Transform> samplePoints = new List<Transform>();
     public int samples = 8;
 
     private Vector3 startPosition;
+
 
     private void Awake()
     {
@@ -18,7 +21,7 @@ public class Pantomime : MonoBehaviour {
     private void Start()
     {
         // spawn sample points
-        Vector3 offset = new Vector3(radius, 4f, 0f);
+        Vector3 offset = new Vector3(radius, raycastDistance, 0f);
         float slice = 360f / samples;
 
         for (int i = 0; i < samples; i++)
@@ -37,23 +40,18 @@ public class Pantomime : MonoBehaviour {
         transform.position = startPosition;
     }
 
-    //private void OnDrawGizmos()
-    //{
-    //    Gizmos.DrawSphere(this.transform.position, radius);
-    //}
-
     private void FixedUpdate()
     {
         // raycast down from every sample point and check if none of them hits a AttentionField, Attention Field + Jam Field is cool
-
         bool insideJam = false;
         foreach (var sample in samplePoints)
         {
-            Debug.DrawRay(sample.position, Vector3.down * 5f);
-            RaycastHit[] hits = Physics.RaycastAll(sample.position, Vector3.down, 5f);
+            if(showDebug) Debug.DrawRay(sample.position, Vector3.down * raycastDistance);
+            RaycastHit[] hits = Physics.RaycastAll(sample.position, Vector3.down, raycastDistance);
 
             foreach (var hit in hits)
             {
+                print(hit.collider.name);
                 if (hit.collider.tag == Tags.JAMFIELD)
                     insideJam = true;
             }
