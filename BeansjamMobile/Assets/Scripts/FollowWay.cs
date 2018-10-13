@@ -72,9 +72,10 @@ public class FollowWay : MonoBehaviour {
         {
             pantomime.forward = Vector3.RotateTowards(pantomime.forward, nextWaypoint - pantomime.position, rotateSpeed * Time.deltaTime, 0.0f);
             // move towards the target
-            pantomime.position = Vector3.MoveTowards(pantomime.position, nextWaypoint, moveSpeed * Time.deltaTime);
+            //pantomime.position = Vector3.MoveTowards(pantomime.position, nextWaypoint, moveSpeed * Time.deltaTime);
+            pantomime.position += Vector3.forward * moveSpeed * Time.deltaTime;
 
-            if (pantomime.position == nextWaypoint)
+            if (pantomime.position.z >= nextWaypoint.z)
             {
                 if (++currentWaypoint < waypoints.Length)
                 {
