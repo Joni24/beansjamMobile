@@ -1,3 +1,3 @@
 ﻿public interface IEnemyBehaviour{
-    void Execute();
+    //void Execute(float boost);
 }

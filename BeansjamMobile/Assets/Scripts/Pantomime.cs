@@ -55,7 +55,6 @@ public class Pantomime : MonoBehaviour {
 
             foreach (var hit in hits)
             {
-                print(hit.collider.name);
                 if (hit.collider.tag == Tags.JAMFIELD)
                     insideJam = true;
             }

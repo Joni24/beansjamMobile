@@ -54,7 +54,10 @@ public class PlayerInput : MonoBehaviour {
         foreach (var item in hits)
         {
             if (item.collider.tag == Tags.JAMFIELD)
+            {
                 item.collider.GetComponentInParent<IAttraction>().Execute();
+            }
+
         }
     }
 }
