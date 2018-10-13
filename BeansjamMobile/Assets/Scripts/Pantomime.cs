@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Pantomime : MonoBehaviour {
+    public PlayerInput playerInput;
+    public MovePlayer movePlayer;
+
     private const float raycastDistance = 10f;
     public float radius = 1.5f;
     public bool showDebug = true;
@@ -12,10 +15,11 @@ public class Pantomime : MonoBehaviour {
 
     private Vector3 startPosition;
 
-
     private void Awake()
     {
         startPosition = transform.position;
+        playerInput.Initialize(this);
+        movePlayer.Initialize(this);
     }
 
     private void Start()

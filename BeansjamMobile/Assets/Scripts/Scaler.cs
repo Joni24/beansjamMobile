@@ -2,49 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Scaler : MonoBehaviour {
+public class Scaler : MonoBehaviour, IEnemyBehaviour {
 
-    public float minScale = 1f;
-    public float maxScale = 3f;
-    public float speed = 1f;
-    public float delayTime = 1f;
+    public AnimationCurve scaleCurve;
+    public bool startScaling = true;
 
-    private int direction = 1;
-    private Vector3 minScaleVector;
-    private Vector3 maxScaleVector;
+    private bool isScaling = false;
     private Vector3 startScale;
-    private WaitForSeconds waitTime; 
+    private float timer = 0;
 
     private void Start()
     {
-        waitTime = new WaitForSeconds(delayTime);
         startScale = transform.localScale;
-        minScaleVector = new Vector3(minScale, minScale, minScale);
-        maxScaleVector = new Vector3(maxScale, maxScale, maxScale);
-        StartCoroutine(ScaleCoroutine());
+
+        if (startScaling)
+            StartCoroutine(ScaleCoroutine());
     }
 
     IEnumerator ScaleCoroutine()
     {
-        float value = minScale;
-        while(this.enabled)
+        isScaling = true;
+        while (this.enabled)
         {
-            value += Time.deltaTime * speed * direction;
-            if (value > maxScale)
-            {
-                value = maxScale;
-                direction *= -1;
-                yield return waitTime;
-            }
-            else if (value < minScale)
-            {
-                value = minScale;
-                direction *= -1;
-                yield return waitTime;
-            }
+            timer += Time.deltaTime;
+            transform.localScale = startScale * scaleCurve.Evaluate(timer);
 
-            transform.localScale = startScale * value;
             yield return 0;
         }
+    }
+
+    public void Execute()
+    {
+        StartCoroutine(ScaleCoroutine());
     }
 }

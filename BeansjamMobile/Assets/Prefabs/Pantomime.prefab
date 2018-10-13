@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 135269873112100004}
   - component: {fileID: 114610799827475286}
   - component: {fileID: 114464086782469652}
+  - component: {fileID: 114121834593371978}
   m_Layer: 0
   m_Name: Pantomime
   m_TagString: Untagged
@@ -55,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1575617196854782}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.64, z: -5.76}
+  m_LocalPosition: {x: 0, y: 0, z: -35.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4855565858006614}
@@ -132,6 +133,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 4
   m_CollisionDetection: 0
+--- !u!114 &114121834593371978
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1575617196854782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fdbb96c44464bb41b3c103af25ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114464086782469652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -143,9 +155,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f98705e542c789b4a957c28379c72044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 1
-  lateralSpeed: 2
-  movementBounds: 3.5
+  forwardSpeed: 4.5
+  lateralSpeed: 4
+  movementBounds: 10.2
 --- !u!114 &114610799827475286
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -157,6 +169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2ecfd255a6cba429b4b18ac98a2a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInput: {fileID: 114121834593371978}
+  movePlayer: {fileID: 114464086782469652}
   radius: 1
   showDebug: 1
   samples: 8

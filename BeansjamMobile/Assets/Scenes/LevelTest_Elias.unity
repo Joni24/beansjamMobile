@@ -1346,7 +1346,7 @@ GameObject:
   - component: {fileID: 406283344}
   m_Layer: 0
   m_Name: Attraktion
-  m_TagString: Untagged
+  m_TagString: Attraction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1372,7 +1372,7 @@ Transform:
   - {fileID: 174282997}
   - {fileID: 1904394422}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &408197548
 Prefab:
@@ -1747,26 +1747,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4396948875599730, guid: 387c55763087ec644ba2d0772d670c2f, type: 2}
       propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1575617196854782, guid: 387c55763087ec644ba2d0772d670c2f, type: 2}
-      propertyPath: m_Name
-      value: Pantomime
-      objectReference: {fileID: 0}
-    - target: {fileID: 114464086782469652, guid: 387c55763087ec644ba2d0772d670c2f,
-        type: 2}
-      propertyPath: forwardSpeed
-      value: 4.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114464086782469652, guid: 387c55763087ec644ba2d0772d670c2f,
-        type: 2}
-      propertyPath: lateralSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114464086782469652, guid: 387c55763087ec644ba2d0772d670c2f,
-        type: 2}
-      propertyPath: movementBounds
-      value: 10.2
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 387c55763087ec644ba2d0772d670c2f, type: 2}
@@ -1854,7 +1835,7 @@ Transform:
   m_LocalScale: {x: 2.4537, y: 2.5491, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: 34.146}
 --- !u!1001 &707348003
 Prefab:
@@ -2417,11 +2398,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 833956019}
   m_LocalRotation: {x: 0.6428929, y: -0, z: -0, w: 0.76595616}
-  m_LocalPosition: {x: 0, y: 34.6, z: 6.200001}
+  m_LocalPosition: {x: 0, y: 34.6, z: -29.099998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1944586332}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 80.01601, y: 0, z: 0}
 --- !u!114 &833956023
 MonoBehaviour:
@@ -2429,14 +2410,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 833956019}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f98705e542c789b4a957c28379c72044, type: 3}
+  m_Script: {fileID: 11500000, guid: 07b01bd3d15744d4cbd6861d50952441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 4.5
-  lateralSpeed: 0
-  movementBounds: 2
+  pantomime: {fileID: 1478593930}
 --- !u!1001 &838752524
 Prefab:
   m_ObjectHideFlags: 0
@@ -3699,6 +3678,7 @@ MonoBehaviour:
   - {fileID: 1446623585}
   - {fileID: 1818032738}
   enemy: {fileID: 0}
+  startDelay: 0
   moveSpeed: 2
   rotateSpeed: 0.56
 --- !u!4 &1468588494
@@ -3717,6 +3697,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1478593930 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114610799827475286, guid: 387c55763087ec644ba2d0772d670c2f,
+    type: 2}
+  m_PrefabInternal: {fileID: 623504648}
+  m_Script: {fileID: 11500000, guid: 1a2ecfd255a6cba429b4b18ac98a2a78, type: 3}
 --- !u!1001 &1489167006
 Prefab:
   m_ObjectHideFlags: 0
@@ -4718,6 +4704,11 @@ Prefab:
       propertyPath: m_Name
       value: Bude_HauDenLukas
       objectReference: {fileID: 0}
+    - target: {fileID: 114919959524755158, guid: a0ceff170c538ae4b84d52cc6452da17,
+        type: 2}
+      propertyPath: startScaling
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0ceff170c538ae4b84d52cc6452da17, type: 2}
   m_IsPrefabAsset: 0
@@ -5176,11 +5167,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4069816113795906, guid: b0d6be0f786fabc4b9cc18b8fd808c73,
     type: 2}
   m_PrefabInternal: {fileID: 1938838609}
---- !u!4 &1944586332 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4396948875599730, guid: 387c55763087ec644ba2d0772d670c2f,
-    type: 2}
-  m_PrefabInternal: {fileID: 623504648}
 --- !u!4 &1948567373 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4067058800013378, guid: 978f6961aede4cf418b65fff74a8a20c,
@@ -5356,7 +5342,7 @@ Transform:
   - {fileID: 14501652}
   - {fileID: 2057023840}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &2046426591
 Mesh:
