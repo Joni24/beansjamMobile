@@ -7,6 +7,7 @@ public class FollowWay : MonoBehaviour, IEnemyBehaviour {
     private Transform[] waypoints;
     [SerializeField]
     private Transform enemy;
+    public float startDelay; 
 
     public float moveSpeed = 2f;
     public float rotateSpeed = 2f;
@@ -16,12 +17,8 @@ public class FollowWay : MonoBehaviour, IEnemyBehaviour {
     private int increment = 1;
 
     void Start () {
-        Reset();
+        StartCoroutine(DelayStartCoroutine());
 	}
-
-    private void Update()
-    {
-    }
 
     private void ShiftWayPoints(Vector3 offset)
     {
@@ -46,10 +43,16 @@ public class FollowWay : MonoBehaviour, IEnemyBehaviour {
         nextWaypoint = waypoints[1].position;
         enemy.transform.position = waypoints[currentWaypoint].position;
         currentWaypoint++;
-        StartCoroutine(Move());
+        StartCoroutine(MoveCoroutine());
     }
 
-    private IEnumerator Move()
+    private IEnumerator DelayStartCoroutine()
+    {
+        yield return new WaitForSeconds(startDelay);
+        Reset();
+    }
+
+    private IEnumerator MoveCoroutine()
     {
         bool bMove = true;
         while (bMove)
@@ -66,16 +69,6 @@ public class FollowWay : MonoBehaviour, IEnemyBehaviour {
 
                 currentWaypoint += increment;
                 nextWaypoint = waypoints[currentWaypoint].position;
-                //if (++currentWaypoint < waypoints.Length)
-                //{
-                //    nextWaypoint = waypoints[currentWaypoint].position;
-                //}
-                //else
-                //{
-                //    //bMove = false;
-                //    ////Stop();
-                //}
-
             }
             yield return 0;
         }
