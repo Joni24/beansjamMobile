@@ -6,7 +6,7 @@ public class Pantomime : MonoBehaviour {
     public PlayerInput playerInput;
     public MovePlayer movePlayer;
 
-    private const float raycastDistance = 10f;
+    private const float raycastDistance = 20f;
     public float radius = 1.5f;
     public bool showDebug = true;
 
