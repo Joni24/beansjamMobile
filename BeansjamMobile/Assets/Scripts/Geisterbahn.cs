@@ -17,6 +17,7 @@ public class Geisterbahn : MonoBehaviour, IAttraction {
     [SerializeField] private SphereCollider jamCollider;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private Animator animator;
     public Monster ghost;
     public Monster monster;
 
@@ -31,15 +32,17 @@ public class Geisterbahn : MonoBehaviour, IAttraction {
         {
             case MonsterAttraction.GHOST:
                 {
+                    animator.SetTrigger(AnimationHashs.GEISTERBAHN_GHOSTS);
                     scaler.scaleCurve = ghost.curve;
-                    scaler.Execute(1);
+                    scaler.Execute();
                     audioSource.PlayOneShot(ghost.sound);
                 }
                 break;
             case MonsterAttraction.MONSTER:
                 {
+                    animator.SetTrigger(AnimationHashs.GEISTERBAHN_MONSTER);
                     scaler.scaleCurve = monster.curve;
-                    scaler.Execute(1);
+                    scaler.Execute();
                     audioSource.PlayOneShot(monster.sound);
                 }
                 break;

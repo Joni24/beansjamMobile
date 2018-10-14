@@ -249,7 +249,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1435980785146410}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 50, y: 0, z: 40}
+  m_LocalPosition: {x: -8.9, y: 0, z: 1.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4066388710826216}
@@ -465,6 +465,7 @@ MonoBehaviour:
   jamCollider: {fileID: 135415398571062372}
   spriteRenderer: {fileID: 212937501386795964}
   audioSource: {fileID: 82257170749091966}
+  animator: {fileID: 95588777233333340}
   ghost:
     curve:
       serializedVersion: 2

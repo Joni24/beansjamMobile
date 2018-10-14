@@ -6019,30 +6019,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114647262053571562, guid: a0ceff170c538ae4b84d52cc6452da17,
-        type: 2}
-      propertyPath: scaleCurve.m_PostInfinity
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 114628865497062222, guid: a0ceff170c538ae4b84d52cc6452da17,
         type: 2}
       propertyPath: scaleBoost
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114647262053571562, guid: a0ceff170c538ae4b84d52cc6452da17,
-        type: 2}
-      propertyPath: scaleCurve.m_Curve.Array.data[1].time
-      value: 2.5324688
-      objectReference: {fileID: 0}
-    - target: {fileID: 114647262053571562, guid: a0ceff170c538ae4b84d52cc6452da17,
-        type: 2}
-      propertyPath: scaleCurve.m_Curve.Array.data[2].time
-      value: 2.955788
-      objectReference: {fileID: 0}
-    - target: {fileID: 114647262053571562, guid: a0ceff170c538ae4b84d52cc6452da17,
-        type: 2}
-      propertyPath: scaleCurve.m_Curve.Array.data[3].time
-      value: 5.50315
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0ceff170c538ae4b84d52cc6452da17, type: 2}
