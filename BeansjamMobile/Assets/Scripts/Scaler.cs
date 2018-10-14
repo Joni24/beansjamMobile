@@ -38,6 +38,12 @@ public class Scaler : MonoBehaviour {
         timer = 0;
     }
 
+    public void Stop()
+    {
+        timer = 0;
+        StopAllCoroutines();
+    }
+
     public void Execute(float boost = 1f)
     {
         this.boost = boost;
@@ -49,5 +55,10 @@ public class Scaler : MonoBehaviour {
     public bool IsExecutable()
     {
         return timer == 0 || !isScaling;
+    }
+
+    public float GetCurrentValue()
+    {
+        return scaleCurve.Evaluate(timer);
     }
 }
