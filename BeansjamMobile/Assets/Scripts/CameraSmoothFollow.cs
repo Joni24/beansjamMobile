@@ -6,17 +6,20 @@ public class CameraSmoothFollow : MonoBehaviour {
 
     public Pantomime pantomime;
 
-    private float height;
+    private float fixedX;
+    private float fixedY;
 
     private void Start()
     {
-        height = this.transform.position.y;
+        fixedX = this.transform.position.x;
+        fixedY = this.transform.position.y;
     }
 
     private void Update()
     {
         Vector3 newPos = pantomime.transform.position;
-        newPos.y = height;
+        newPos.y = fixedY;
+        newPos.x = fixedX;
         this.transform.position = newPos;
     }
 }

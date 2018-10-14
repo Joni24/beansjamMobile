@@ -7,6 +7,7 @@ TagManager:
   - Jam
   - Attention
   - Attraction
+  - ClickCollider
   layers:
   - Default
   - TransparentFX
