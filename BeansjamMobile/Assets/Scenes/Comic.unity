@@ -122,6 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 283084823}
   - component: {fileID: 283084824}
+  - component: {fileID: 283084825}
   m_Layer: 0
   m_Name: Comic
   m_TagString: Untagged
@@ -169,6 +170,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &283084825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 283084822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1765bf41aabd984c9945e4f2db16bfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &924646396
 Prefab:
   m_ObjectHideFlags: 0
@@ -232,7 +244,8 @@ Prefab:
       propertyPath: m_BackGroundColor.b
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114132871870505318, guid: 2b73812faeda2e849abe0b02433c132f, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 2b73812faeda2e849abe0b02433c132f, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1022610713
