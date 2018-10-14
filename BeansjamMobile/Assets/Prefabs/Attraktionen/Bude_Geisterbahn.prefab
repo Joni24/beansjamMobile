@@ -13,15 +13,15 @@ Prefab:
   m_IsPrefabAsset: 1
 --- !u!1 &1000337316450414
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4754009835658768}
   - component: {fileID: 65527613600170726}
-  m_Layer: 0
-  m_Name: Collider (1)
+  m_Layer: 5
+  m_Name: ClickCollider
   m_TagString: Jam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -255,6 +255,7 @@ Transform:
   - {fileID: 4066388710826216}
   - {fileID: 4434102052770162}
   - {fileID: 4958544817069872}
+  - {fileID: 4754009835658768}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -292,12 +293,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000337316450414}
-  m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -0, y: 0, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.7071063, z: -0, w: 0.70710737}
+  m_LocalPosition: {x: -0.19748, y: 4.2733, z: -1.8314}
+  m_LocalScale: {x: 2.8168314, y: 2.8168302, z: 2.8168314}
   m_Children: []
-  m_Father: {fileID: 4958544817069872}
-  m_RootOrder: 0
+  m_Father: {fileID: 4568077688182694}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!4 &4958544817069872
 Transform:
@@ -308,8 +309,7 @@ Transform:
   m_LocalRotation: {x: -0, y: 0.38268277, z: -0, w: 0.92387986}
   m_LocalPosition: {x: -0.24, y: 2.92, z: -1.34}
   m_LocalScale: {x: 2.1402857, y: 2.1402857, z: 2.1402857}
-  m_Children:
-  - {fileID: 4754009835658768}
+  m_Children: []
   m_Father: {fileID: 4568077688182694}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 45.000004, z: 0}
@@ -320,7 +320,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000337316450414}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.8548242, y: 5, z: 3.41569}

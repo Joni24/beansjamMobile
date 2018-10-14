@@ -51,7 +51,11 @@ public class Pantomime : MonoBehaviour {
         foreach (var sample in samplePoints)
         {
             if(showDebug) Debug.DrawRay(sample.position, Vector3.down * raycastDistance);
-            RaycastHit[] hits = Physics.RaycastAll(sample.position, Vector3.down, raycastDistance);
+
+            int layerMask = 1 << Layers.UI_LAYER;
+            layerMask = ~layerMask;
+
+            RaycastHit[] hits = Physics.RaycastAll(sample.position, Vector3.down, raycastDistance, layerMask);
 
             foreach (var hit in hits)
             {

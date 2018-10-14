@@ -49,15 +49,14 @@ public class PlayerInput : MonoBehaviour {
     {
         Ray ray = Camera.main.ScreenPointToRay(touchPosition);
         Debug.DrawRay(ray.origin, ray.direction * 50f, Color.red);
-        var hits = Physics.RaycastAll(ray);
+
+        // only cast against UI_LAYER
+        int layermask = 1 << Layers.UI_LAYER;
+        var hits = Physics.RaycastAll(ray, 50f, layermask);
 
         foreach (var item in hits)
         {
-            if (item.collider.tag == Tags.JAMFIELD)
-            {
-                item.collider.GetComponentInParent<IAttraction>().Execute();
-            }
-
+            item.collider.GetComponentInParent<IAttraction>().Execute();
         }
     }
 }

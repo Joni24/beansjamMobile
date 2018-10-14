@@ -2,5 +2,5 @@
     public static readonly string JAMFIELD = "Jam";
     public static readonly string ATTENTIONFIELD = "Attention";
     public static readonly string UNTAGGED = "Untagged";
-    public static readonly string ATTRACTION = "Attraction";
+    public static readonly string CLICKCOLLIDER = "ClickCollider";
 }
