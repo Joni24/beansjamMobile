@@ -14,6 +14,7 @@ public class Riesenrad : MonoBehaviour, IAttraction {
         if (!scaler.IsExecutable())
             return;
 
+        audioSource.Play();
         jamCollider.enabled = true;
         spriteRenderer.enabled = true;
         scaler.Execute();
