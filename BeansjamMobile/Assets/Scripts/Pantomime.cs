@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pantomime : MonoBehaviour {
     public PlayerInput playerInput;
     public MovePlayer movePlayer;
+    public AudioSource audioSource;
 
     private const float raycastDistance = 20f;
     public float radius = 1.5f;
@@ -42,6 +43,7 @@ public class Pantomime : MonoBehaviour {
     {
         //Debug.Log("SHAME SHAME, YOU ARE NOT A PANTOMIME ANYMORE!");
         transform.position = startPosition;
+        //audioSource.Play();
     }
 
     private void FixedUpdate()
