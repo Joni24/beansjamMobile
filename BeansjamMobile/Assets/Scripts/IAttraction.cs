@@ -1,4 +1,4 @@
 ﻿
 public interface IAttraction{
-    void Execute();
+    bool Execute();
 }

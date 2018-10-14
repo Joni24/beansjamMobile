@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4625430925583452}
   - component: {fileID: 212599552826043218}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: A_Stand_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4927171290363096}
   - component: {fileID: 65924976800800060}
-  m_Layer: 2
+  m_Layer: 5
   m_Name: Collider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4534824117405616}
   - component: {fileID: 65229871448150448}
-  m_Layer: 2
+  m_Layer: 5
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

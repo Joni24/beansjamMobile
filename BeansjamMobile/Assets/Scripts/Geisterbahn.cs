@@ -21,10 +21,10 @@ public class Geisterbahn : MonoBehaviour, IAttraction {
     public Monster ghost;
     public Monster monster;
 
-    public void Execute()
+    public bool Execute()
     {
         if (!scaler.IsExecutable())
-            return;
+            return false;
 
         jamCollider.enabled = true;
         spriteRenderer.enabled = true;
@@ -47,7 +47,7 @@ public class Geisterbahn : MonoBehaviour, IAttraction {
                 }
                 break;
         }
-
+        return true;
     }
 
 

@@ -59,6 +59,9 @@ public class Pantomime : MonoBehaviour {
 
             foreach (var hit in hits)
             {
+                if (hit.collider.tag == Tags.GOAL)
+                    GameManager.gameManager.NextLevel();
+
                 if (hit.collider.tag == Tags.JAMFIELD)
                     insideJam = true;
             }

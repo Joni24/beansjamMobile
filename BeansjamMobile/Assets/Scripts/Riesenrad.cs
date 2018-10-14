@@ -10,15 +10,16 @@ public class Riesenrad : MonoBehaviour, IAttraction {
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private Animator animator;
 
-    public void Execute()
+    public bool Execute()
     {
         if (!scaler.IsExecutable())
-            return;
+            return false;
 
         animator.SetTrigger(AnimationHashs.RIESENRAD_SPIN);
         audioSource.Play();
         jamCollider.enabled = true;
         spriteRenderer.enabled = true;
         scaler.Execute();
+        return true;
     }
 }

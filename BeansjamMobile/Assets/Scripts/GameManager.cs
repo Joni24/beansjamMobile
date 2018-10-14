@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
-    private static GameManager gameManager;
+    public static GameManager gameManager;
+    private int currentScene = 0;
 
     private void Awake()
     {
@@ -14,5 +16,11 @@ public class GameManager : MonoBehaviour {
             Destroy(this.gameObject);
 
         DontDestroyOnLoad(this);
+        currentScene = SceneManager.GetActiveScene().buildIndex;
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(++currentScene);
     }
 }

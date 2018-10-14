@@ -7,8 +7,9 @@ public class Attraction : MonoBehaviour, IAttraction {
     void Start () {
 	}
 
-    public void Execute()
+    public bool Execute()
     {
         print("Execute Attraction "+ name);
+        return true;
     }
 }

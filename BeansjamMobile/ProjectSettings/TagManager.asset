@@ -8,6 +8,7 @@ TagManager:
   - Attention
   - Attraction
   - ClickCollider
+  - Goal
   layers:
   - Default
   - TransparentFX

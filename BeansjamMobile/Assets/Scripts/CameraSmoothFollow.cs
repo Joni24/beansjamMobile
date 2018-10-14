@@ -1,16 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraSmoothFollow : MonoBehaviour {
 
-    public Pantomime pantomime;
+    private Pantomime pantomime;
 
     private float fixedX;
     private float fixedY;
+    private Vector3 startPosition;
 
     private void Start()
     {
+        pantomime = FindObjectOfType<Pantomime>();
+        startPosition = transform.position;
         fixedX = this.transform.position.x;
         fixedY = this.transform.position.y;
     }
@@ -21,5 +25,10 @@ public class CameraSmoothFollow : MonoBehaviour {
         newPos.y = fixedY;
         newPos.x = fixedX;
         this.transform.position = newPos;
+    }
+
+    public void Reset()
+    {
+        this.transform.position = startPosition;
     }
 }

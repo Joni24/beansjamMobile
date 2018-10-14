@@ -18,7 +18,8 @@ public class PlayerInput : MonoBehaviour {
             Touch touch = Input.GetTouch(0);
 
             // touch hits a attraction, else move player
-            TouchRaycast(touch.position);
+            if(TouchRaycast(touch.position))
+                return;
 
             if (touch.position.x < Screen.width / 2.0f)
             {
@@ -32,20 +33,25 @@ public class PlayerInput : MonoBehaviour {
         else
         {
             if(Input.GetMouseButtonDown(0))
-                TouchRaycast(Input.mousePosition);
+                if (TouchRaycast(Input.mousePosition))
+                    return;
 
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetMouseButton(0))
             {
-                pantomime.movePlayer.MoveLeft();
+                if (Input.GetKey(KeyCode.LeftArrow) || Input.mousePosition.x < Screen.width / 2.0f)
+                {
+                    pantomime.movePlayer.MoveLeft();
+                }
+                else if (Input.GetKey(KeyCode.RightArrow) || Input.mousePosition.x >= Screen.width / 2.0f)
+                {
+                    pantomime.movePlayer.MoveRight();
+                }
             }
-            else if (Input.GetKey(KeyCode.RightArrow))
-            {
-                pantomime.movePlayer.MoveRight();
-            }
+
         }
     }
 
-    private void TouchRaycast(Vector3 touchPosition)
+    private bool TouchRaycast(Vector3 touchPosition)
     {
         Ray ray = Camera.main.ScreenPointToRay(touchPosition);
         Debug.DrawRay(ray.origin, ray.direction * 50f, Color.red);
@@ -58,7 +64,11 @@ public class PlayerInput : MonoBehaviour {
         {
             IAttraction attraction = item.collider.GetComponentInParent<IAttraction>();
             if (attraction != null)
-                attraction.Execute();
+            {
+                return attraction.Execute();
+            }
+
         }
+        return false;
     }
 }

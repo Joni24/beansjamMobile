@@ -15,12 +15,13 @@ public class HauDenLukas : MonoBehaviour, IAttraction{
     public AudioClip hammerSound;
     public AudioClip stopBarSound;
 
-    public void Execute()
+    public bool Execute()
     {
         if(redScaler.IsExecutable() && scaler.IsExecutable())
         {
             redScaler.Execute();
             audioSource.PlayOneShot(hammerSound);
+            return true;
         }
         else
         {
@@ -35,7 +36,9 @@ public class HauDenLukas : MonoBehaviour, IAttraction{
                 float scale = perk * scaleBoost;
                 scaler.Execute(scale);
                 redScaler.Stop();
+                return true;
             }
         }
+        return false;
     }
 }
