@@ -18,7 +18,7 @@ public class PlayerInput : MonoBehaviour {
             Touch touch = Input.GetTouch(0);
 
             // touch hits a attraction, else move player
-            if(TouchRaycast(touch.position))
+            if(touch.phase == TouchPhase.Began && TouchRaycast(touch.position))
                 return;
 
             if (touch.position.x < Screen.width / 2.0f)
