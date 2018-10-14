@@ -56,7 +56,9 @@ public class PlayerInput : MonoBehaviour {
 
         foreach (var item in hits)
         {
-            item.collider.GetComponentInParent<IAttraction>().Execute();
+            IAttraction attraction = item.collider.GetComponentInParent<IAttraction>();
+            if (attraction != null)
+                attraction.Execute();
         }
     }
 }
