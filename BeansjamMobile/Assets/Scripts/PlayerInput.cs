@@ -15,20 +15,32 @@ public class PlayerInput : MonoBehaviour {
     {
         if (Input.touchSupported)
         {
-            Touch touch = Input.GetTouch(0);
+            Touch[] touches = Input.touches;
 
             // touch hits a attraction, else move player
-            if(touch.phase == TouchPhase.Began && TouchRaycast(touch.position))
-                return;
+            foreach (var touch in touches)
+            {
+                if (touch.phase == TouchPhase.Began && TouchRaycast(touch.position))
+                    return;
+            }
 
-            if (touch.position.x < Screen.width / 2.0f)
+            foreach (var touch in touches)
             {
-                pantomime.movePlayer.MoveLeft();
+                if (touch.phase == TouchPhase.Began)
+                    break;
+
+                if (touch.position.x < Screen.width / 2.0f)
+                {
+                    pantomime.movePlayer.MoveLeft();
+                }
+                else if (touch.position.x >= Screen.width / 2.0f)
+                {
+                    pantomime.movePlayer.MoveRight();
+                }
+
+                return;
             }
-            else if (touch.position.x >= Screen.width / 2.0f)
-            {
-                pantomime.movePlayer.MoveRight();
-            }
+
         }
         else
         {
