@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
+    private const int sceneCount = 4;
     public static GameManager gameManager;
     private int currentScene = 0;
 
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour {
     public void NextLevel()
     {
         currentScene++;
+        currentScene %= 5;
         SceneManager.LoadScene(currentScene);
     }
 }
