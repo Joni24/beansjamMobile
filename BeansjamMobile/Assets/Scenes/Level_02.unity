@@ -537,7 +537,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4809716321237524, guid: a0ceff170c538ae4b84d52cc6452da17, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.17
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 4809716321237524, guid: a0ceff170c538ae4b84d52cc6452da17, type: 2}
       propertyPath: m_LocalPosition.y
@@ -545,7 +545,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4809716321237524, guid: a0ceff170c538ae4b84d52cc6452da17, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 80.33
+      value: 79.9
       objectReference: {fileID: 0}
     - target: {fileID: 4809716321237524, guid: a0ceff170c538ae4b84d52cc6452da17, type: 2}
       propertyPath: m_LocalRotation.x
@@ -570,6 +570,11 @@ Prefab:
     - target: {fileID: 1950494350334266, guid: a0ceff170c538ae4b84d52cc6452da17, type: 2}
       propertyPath: m_Name
       value: Bude_HauDenLukas (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114628865497062222, guid: a0ceff170c538ae4b84d52cc6452da17,
+        type: 2}
+      propertyPath: scaleBoost
+      value: 0.85
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0ceff170c538ae4b84d52cc6452da17, type: 2}
@@ -1098,7 +1103,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4659337530546666, guid: 187e8e4a30766444eb52fd0058ae08c4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.49
+      value: -1.87
       objectReference: {fileID: 0}
     - target: {fileID: 4659337530546666, guid: 187e8e4a30766444eb52fd0058ae08c4, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1106,7 +1111,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4659337530546666, guid: 187e8e4a30766444eb52fd0058ae08c4, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 2.09
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 4659337530546666, guid: 187e8e4a30766444eb52fd0058ae08c4, type: 2}
       propertyPath: m_LocalRotation.x

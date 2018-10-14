@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forwardSpeed: 4.5
-  lateralSpeed: 4
+  lateralSpeed: 4.5
   movementBounds: 10.2
 --- !u!114 &114610799827475286
 MonoBehaviour:
