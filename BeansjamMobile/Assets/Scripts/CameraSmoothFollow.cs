@@ -19,7 +19,7 @@ public class CameraSmoothFollow : MonoBehaviour {
         fixedY = this.transform.position.y;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         Vector3 newPos = pantomime.transform.position;
         newPos.y = fixedY;
